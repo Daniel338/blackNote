@@ -3,7 +3,7 @@
 :root
 {
     --color-one: rgb(39, 42, 52);
-    --color-two: #5f6368;
+    --color-two: rgb(225, 225, 225);
     --color-three: #32a877;
 }
 
@@ -12,4 +12,52 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body
+{
+    overflow: hidden;
+}
+
+.header
+{   
+    width: 100%;
+    height: 60px;
+    padding: 0 50px;
+    background: var(--color-one);
+    color: var(--color-two);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__title
+{
+    align-self: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.header__option
+{
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__option i
+{
+    font-size: 1.7rem;
+}
+
+.main
+{
+    width: 100%;
+    height: calc(100vh - 60px);
+    padding: 0 50px;
+    background: rgb(34, 37, 44);
 }
