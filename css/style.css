@@ -3,6 +3,7 @@
 :root
 {
     --bg-one: rgb(34, 37, 44);
+    --bg-two: rgb(24, 26, 31);
     --color-one: rgb(66, 66, 77);
     --color-two: rgb(225, 225, 225);
     --color-three: #32a877;
@@ -17,7 +18,7 @@
 
 body
 {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .header
@@ -25,10 +26,12 @@ body
     width: 100%;
     height: 60px;
     padding: 0 50px;
-    background: var(--bg-one);
+    background: var(--bg-two);
     color: var(--color-two);
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
 }
 
 .header__title
@@ -114,4 +117,44 @@ body
     color: var(--color-two);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+}
+
+.footer
+{
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    bottom: 0;
+    background: var(--bg-two);
+}
+
+.footer .list-ico
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 1.5rem;
+    color: var(--color-two);
+}
+
+.footer .list-ico .ico span
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.footer .list-ico .ico .ico__plus
+{
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 50%;
+    background: var(--color-three);
 }
