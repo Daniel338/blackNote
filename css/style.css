@@ -2,7 +2,8 @@
 
 :root
 {
-    --color-one: rgb(39, 42, 52);
+    --bg-one: rgb(34, 37, 44);
+    --color-one: rgb(66, 66, 77);
     --color-two: rgb(225, 225, 225);
     --color-three: #32a877;
 }
@@ -24,9 +25,8 @@ body
     width: 100%;
     height: 60px;
     padding: 0 50px;
-    background: var(--color-one);
+    background: var(--bg-one);
     color: var(--color-two);
-    box-shadow: 0 10px 10px rgba(0,0,0,0.3);
     display: flex;
     justify-content: space-between;
 }
@@ -58,6 +58,27 @@ body
 {
     width: 100%;
     height: calc(100vh - 60px);
-    padding: 0 50px;
-    background: rgb(34, 37, 44);
+    padding-top: 10px;
+    background: var(--bg-one);
+}
+
+.main .row-1
+{
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 0 100px;
+}
+
+.main .row-1 .box
+{
+    width: 170px;
+    height: 170px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background: var(--color-one);
+    border-radius: 20px;
 }
