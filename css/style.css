@@ -80,5 +80,38 @@ body
     margin-right: 20px;
     margin-bottom: 10px;
     background: var(--color-one);
-    border-radius: 20px;
+    border-radius: 10px;
+}
+
+.row-1 .box .box__top
+{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.row-1 .box__top .icon
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40px;
+    height: 100%;
+    color: var(--color-two);
+    cursor: pointer;
+}
+
+.row-1 .box__top .box-subtitle
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    color: var(--color-two);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
