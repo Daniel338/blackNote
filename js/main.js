@@ -20,3 +20,23 @@ function mostrar()
     }
 }
 
+// Crear nueva nota
+const btnPlus = document.getElementById('newNote');
+let typeNote = document.getElementById('typeNote');
+let noteOn = false;
+
+btnPlus.addEventListener('click', mostrarNote, false);
+
+function mostrarNote()
+{
+    if(noteOn == false)
+    {
+        noteOn = true;
+        typeNote.classList.add('active');
+    }
+    else
+    {
+        noteOn = false;
+        typeNote.classList.remove('active');
+    }
+}

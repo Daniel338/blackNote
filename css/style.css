@@ -22,7 +22,8 @@ body
     /* overflow: hidden; */
 }
 
-.filter
+.filter,
+.typeNote
 {
     display: none;
     width: 350px;
@@ -37,7 +38,8 @@ body
     margin: auto;
 }
 
-.filter.active
+.filter.active,
+.typeNote.active
 {
     display: block;
     animation-name: barUp;
@@ -60,7 +62,8 @@ body
     }
 }
 
-.filter ul
+.filter ul,
+.typeNote ul
 {
     width: 100%;
     height: 100%;
@@ -71,12 +74,14 @@ body
     list-style: none;
 }
 
-.filter ul li
+.filter ul li,
+.typeNote ul li
 {
     width: 100%;
 }
 
-.filter ul li input
+.filter ul li input,
+.typeNote ul li input
 {
     width: 100%;
     color: var(--color-text);
