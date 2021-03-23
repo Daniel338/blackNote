@@ -1,90 +1,104 @@
 
-// Mostra opciones de filtro
-const btnFilter = document.getElementById('header__filter');
-let filterBar = document.getElementById('filter');
-let filterOpen = false;
+// Compenzar el script cuando carge el DOM
+document.addEventListener('DOMContentLoaded', developmeent, false);
 
-btnFilter.addEventListener('click', mostrar, false);
-
-function mostrar()
+// Scripts
+function developmeent ()
 {
-    if(filterOpen == false)
-    {
-        filterOpen = true;
-        filterBar.classList.add('active');
-    }
-    else
-    {
-        filterOpen = false;
-        filterBar.classList.remove('active');
-    }
-}
+	console.log('Page load complete');
 
-// Crear nueva nota
-const btnPlus = document.getElementById('newNote');
-let typeNote = document.getElementById('typeNote');
-let noteOn = false;
+	// Btn objetcs
+	const header__filter = document.getElementById('header__filter');
+	const btnPlus = document.getElementById('btnPlus');
 
-btnPlus.addEventListener('click', mostrarNote, false);
+	// Mostrar filter
+	header__filter.addEventListener('click', modalFilter, false);
+	let filterOpen = false;
 
-function mostrarNote()
-{
-    if(noteOn == false)
-    {
-        noteOn = true;
-        typeNote.classList.add('active');
-    }
-    else
-    {
-        noteOn = false;
-        typeNote.classList.remove('active');
-    }
-}
-// New Note
-const noteInput = document.getElementById('nota');
-noteInput.addEventListener('click', newNote, false);
+	function modalFilter()
+	{
+		const box__filter = document.getElementById('filter');
+		if(filterOpen == false)
+		{
+			filterOpen = true;
+			box__filter.classList.add('active');
+		}
+		else
+		{
+			filterOpen = false;
+			box__filter.classList.remove('active');
+		}
+	}
 
-function newNote()
-{
+	// Mostrar opciones de nota
+	btnPlus.addEventListener('click', optionNote, false);
+	let typeNoteOpen = false;
+	function optionNote()
+	{
+		const typeNote = document.getElementById('typeNote');
+		const btnNote = document.getElementById('btnNote');
+		const noteRight = document.getElementById('note__right');
+		if(typeNoteOpen == false)
+		{
+			typeNoteOpen = true;
+			typeNote.classList.add('active');
+		}
+		else
+		{
+			typeNoteOpen = false;
+			typeNote.classList.remove('active');
+		}
 
-	let noteTitle = prompt('ingrese el titulo de la nota:');
-	let noteContent = prompt('Ingrese el contenido de la nota:');
-	let row_1 = document.getElementById('box_content');
+		btnNote.addEventListener('click', function ()
+		{
+			typeNoteOpen = false;
+			typeNote.classList.remove('active');
+			noteRight.classList.add('active');
+			
+			const saveNote = document.getElementById('inputSave');
+			saveNote.addEventListener('click', function ()
+			{
+				let noteTitle = document.getElementById('noteTitle').value;
+				let noteContent = document.getElementById('noteContent').value;
+				const box__content = document.getElementById('box__content');
 
-	// Box model
-	let boxArticle = document.createElement('article');
-	boxArticle.className = 'box';
+				// Box model
+				const article = document.createElement('article');
+				const box__top = document.createElement('div');
+				const box__title = document.createElement('h3');
+				const box__bottom = document.createElement('div');
 
-	const box__top = document.createElement('div');
-	box__top.className = 'box__top';
+				// box__top elements
+				const span = document.createElement('span');
+				const i = document.createElement('i');
 
-	const box__bottom = document.createElement('div');
-	box__bottom.className = 'box__bottom';
+				// add classList
+				article.classList.add('box');
+				box__top.classList.add('box__top');
+				box__title.classList.add('box__title');
+				box__bottom.classList.add('box__bottom');
+				span.classList.add('icon');
+				i.classList.add('far');
+				i.classList.add('fa-star');
+				
+				// nesting content
+				box__title.textContent = `${noteTitle}`;
 
-	const icon = document.createElement('span');
-	const ico = document.createElement('i');
-	const box_subtitle = document.createElement('h4');
-	box_subtitle.textContent = `${noteContent}`;
-	box_subtitle.className = 'box-subtitle';
-	icon.className = 'icon';
-	ico.className = 'far fa-star';
+				// addChild box__top
+				span.appendChild(i);
+				box__top.appendChild(span);
+				
+				// nesting elements
+				article.appendChild(box__top);
+				article.appendChild(box__title);
+				article.appendChild(box__bottom);
 
-	/// Anidando elementos de Box__top
-	icon.appendChild(ico);
-	box__top.appendChild(icon);
-	box__top.appendChild(box_subtitle);
+				// Mostrar en la pagina y cerrar ventana
+				console.log(article);
+				box__content.appendChild(article);
+				noteRight.classList.remove('active');
+			});
 
-
-	const boxTitle = document.createElement('h3');
-	boxTitle.className = 'box__title';
-	boxTitle.textContent = `${noteTitle}`;
-
-	noteOn = false;
-    typeNote.classList.remove('active');
-	
-	boxArticle.appendChild(box__top);
-	boxArticle.appendChild(boxTitle);
-	boxArticle.appendChild(box__bottom);
-	row_1.appendChild(boxArticle);
-	console.log(boxArticle);
+		}, false);
+	}
 }
