@@ -1,0 +1,11 @@
+# Vim backups
+*.swp
+*.un~
+*~
+*.js~
+*.py~
+.js~
+.py~
+.swp
+.un~
+.json~
