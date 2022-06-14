@@ -16,11 +16,14 @@ function development ()
 	const noteRight = document.getElementById('note__right');
 	const inputTitle = document.getElementById('noteTitle');
 	const inputContent = document.getElementById('noteContent');
+    const boxContent = document.querySelector('#box__content')
     const inputSave = document.querySelector('#inputSave');
+    const notes = {};
 
     // Ventana de notas
 	function inputNotes()
 	{
+		typeNote.classList.toggle('active');
 		noteRight.classList.add('active');
         inputTitle.focus();
         inputSave.addEventListener('click', saveNote, false);
@@ -33,6 +36,14 @@ function development ()
 
         console.log(`El titulo es: \n${title}`);
         console.log(`El contenido es: \n${content}`);
+        
+        // Restablecer valores
+        inputTitle.value = "";
+        inputContent.value = "";
+	    noteRight.classList.remove('active');
+
+        // Mostrar cantidad de notas
+
     }
 
 	btnPlus.onclick = function()
