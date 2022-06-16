@@ -288,6 +288,19 @@ body
     height: 60px;
 }
 
+.dateNote__top .button__back
+{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dateNote__top .button__back:focus
+{
+    border: 1px solid rgb(66 66 77);
+}
+
 .dateNote__top .ico
 {
     display: flex;

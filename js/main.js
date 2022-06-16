@@ -16,8 +16,9 @@ function development ()
 	const noteRight = document.getElementById('note__right');
 	const inputTitle = document.getElementById('noteTitle');
 	const inputContent = document.getElementById('noteContent');
-    const boxContent = document.querySelector('#box__content')
+    const boxContent = document.querySelector('#box__content');
     const inputSave = document.querySelector('#inputSave');
+    const inputBack = document.querySelector(".ico_back");
     const notes = {};
 
     // Ventana de notas
@@ -27,7 +28,8 @@ function development ()
 		noteRight.classList.add('active');
         inputTitle.focus();
         inputSave.addEventListener('click', saveNote, false);
-	}
+        inputBack.addEventListener('click', go_back, false);
+	};
 
     function saveNote()
     {
@@ -44,11 +46,19 @@ function development ()
 
         // Mostrar cantidad de notas
 
-    }
+    };
+
+    function go_back(){
+
+        // Restablecer valores y salir
+        inputTitle.value = "";
+        inputContent.value = "";
+	    noteRight.classList.remove('active');
+    };
 
 	btnPlus.onclick = function()
 	{
 		typeNote.classList.toggle('active');
 		btnNote.addEventListener('click', inputNotes,false);
 	};
-}
+};
