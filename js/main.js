@@ -36,6 +36,28 @@ function development ()
         let title = inputTitle.value;
         let content = inputContent.value;
 
+        // Element the DOM
+        let box = document.createElement('article');
+        let box__top = document.createElement('div');
+        let box__title = document.createElement('h3');
+        let box__bottom = document.createElement('div');
+
+        box.classList.add('box');
+        box__top.classList.add('box__top');
+        box__title.classList.add('box__title');
+        box__bottom.classList.add('box__bottom');
+
+        box__title.innerHTML = title;
+
+        box.appendChild(box__top);
+        box.appendChild(box__title);
+        box.appendChild(box__bottom);
+
+
+        // Mostrar en Notas
+        boxContent.appendChild(box);
+
+        // Mostrar title and content in console
         console.log(`El titulo es: \n${title}`);
         console.log(`El contenido es: \n${content}`);
         
